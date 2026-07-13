@@ -1,0 +1,2387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لاروش | LAROCHE</title>
+<meta name="description" content="لاروش — علامة سعودية متخصصة في الأزياء العصرية الشبابية، تأسست عام 2022 في جدة.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="لاروش | LAROCHE">
+<meta property="og:description" content="علامة سعودية متخصصة في الأزياء العصرية الشبابية — تأسست 2022 في جدة.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Tajawal:wght@200;300;400;500;700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════
+   DESIGN TOKENS — from logo
+   Teal #4AACB4 + Gold #D4A84B
+═══════════════════════════ */
+:root {
+  --teal:        #4AACB4;
+  --teal-dark:   #2E8A91;
+  --teal-deep:   #1A5F64;
+  --teal-light:  #7FCDD3;
+  --teal-pale:   #E8F6F7;
+  --gold:        #D4A84B;
+  --gold-light:  #E8C06A;
+  --gold-pale:   #FBF3E2;
+  --ink:         #0F2426;
+  --ink-mid:     #1E3E42;
+  --charcoal:    #2C4A4E;
+  --mid:         #5A8589;
+  --muted:       #8AADB1;
+  --light-bg:    #F4FAFB;
+  --white:       #FEFEFE;
+  --border:      rgba(74,172,180,0.15);
+  --shadow-teal: 0 20px 60px rgba(74,172,180,0.12);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Tajawal', 'Outfit', sans-serif;
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+body.lang-en {
+  direction: ltr;
+  font-family: 'Outfit', 'Tajawal', sans-serif;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--teal-pale); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+
+/* ══════════════════════════════
+   NAVIGATION
+══════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(254,254,254,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.4s ease;
+}
+
+nav.scrolled {
+  background: rgba(254,254,254,0.98);
+  box-shadow: 0 4px 30px rgba(74,172,180,0.08);
+}
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-svg {
+  width: 44px;
+  height: 44px;
+}
+
+.logo-text-wrap {
+  line-height: 1;
+}
+
+.logo-ar {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--teal-dark);
+  letter-spacing: -0.5px;
+  display: block;
+}
+
+.logo-en {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--mid);
+  display: block;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 36px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--charcoal);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--teal);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--teal-dark); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-nav {
+  background: var(--teal);
+  color: white;
+  padding: 10px 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.3s, transform 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-nav:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+.lang-toggle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--mid);
+  border: 1px solid var(--border);
+  padding: 7px 14px;
+  cursor: pointer;
+  background: none;
+  transition: all 0.3s;
+  border-radius: 2px;
+}
+
+.lang-toggle:hover { border-color: var(--teal); color: var(--teal); }
+
+.nav-toggle-mobile {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--teal-dark);
+  font-size: 24px;
+  padding: 4px;
+  z-index: 1100;
+}
+
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--white);
+  z-index: 1050;
+  padding: 32px 24px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-menu-overlay.open { display: block; }
+
+.mobile-menu-overlay ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-menu-overlay a {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  display: block;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-menu-overlay .btn-nav {
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* ══════════════════════════════
+   HERO
+══════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-geo {
+  position: absolute;
+  opacity: 0.06;
+}
+
+.hero-geo-1 { top: -80px; left: -80px; width: 600px; height: 600px; }
+.hero-geo-2 { bottom: -120px; right: -100px; width: 700px; height: 700px; opacity: 0.04; }
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 20% 50%, rgba(74,172,180,0.18) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 50% at 80% 80%, rgba(212,168,75,0.08) 0%, transparent 50%);
+}
+
+.hero-beam {
+  position: absolute;
+  top: -20%;
+  right: 35%;
+  width: 1px;
+  height: 140%;
+  background: linear-gradient(to bottom, transparent, rgba(74,172,180,0.25), transparent);
+  transform: rotate(-15deg);
+}
+
+.hero-beam-2 {
+  position: absolute;
+  top: -20%;
+  right: 38%;
+  width: 1px;
+  height: 140%;
+  background: linear-gradient(to bottom, transparent, rgba(212,168,75,0.12), transparent);
+  transform: rotate(-15deg);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+  padding-top: 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-left {
+  animation: heroFadeUp 1s ease both;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--teal-light);
+  margin-bottom: 28px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+
+.hero-h1-ar {
+  font-family: 'Tajawal', sans-serif;
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.hero-h1-ar span {
+  color: var(--teal-light);
+}
+
+.hero-h1-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 4vw, 52px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 6px;
+  margin-bottom: 32px;
+  font-style: italic;
+}
+
+.hero-desc {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.9;
+  max-width: 480px;
+  margin-bottom: 48px;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-hero-primary {
+  background: var(--teal);
+  color: white;
+  padding: 16px 36px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hero-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--teal-dark);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.btn-hero-primary:hover::before { transform: translateX(0); }
+.btn-hero-primary span { position: relative; z-index: 1; }
+
+.btn-hero-ghost {
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  padding: 16px 36px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.btn-hero-ghost:hover {
+  border-color: var(--teal);
+  color: var(--teal-light);
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: heroFadeUp 1s 0.3s ease both;
+}
+
+.hero-logo-display {
+  position: relative;
+  width: 380px;
+  height: 380px;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--teal));
+  animation: scrollLine 1.5s ease-in-out infinite;
+}
+
+.hero-scroll-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ══════════════════════════════
+   STATS STRIP
+══════════════════════════════ */
+.stats-strip {
+  background: var(--teal-dark);
+  padding: 0;
+  overflow: hidden;
+}
+
+.stats-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-item {
+  padding: 48px 40px;
+  text-align: center;
+  border-left: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.stat-item:last-child { border-left: none; }
+.stat-item:hover { background: rgba(255,255,255,0.05); }
+
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.stat-number span {
+  color: var(--gold-light);
+}
+
+.stat-label-ar {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.stat-label-en {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ══════════════════════════════
+   ABOUT SECTION
+══════════════════════════════ */
+.about {
+  padding: 120px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 20px;
+}
+
+.section-tag::before {
+  content: '';
+  width: 20px;
+  height: 1.5px;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+
+.section-h2-ar {
+  font-family: 'Tajawal', sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.section-h2-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.5vw, 32px);
+  font-weight: 300;
+  color: var(--mid);
+  letter-spacing: 3px;
+  font-style: italic;
+  margin-bottom: 32px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-text {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 2;
+  margin-bottom: 24px;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.brand-geo-display {
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 480px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.geo-bg-rect {
+  position: absolute;
+  inset: 0;
+  background: var(--teal-pale);
+  border-radius: 4px;
+}
+
+.geo-accent {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  bottom: 0;
+  left: 0;
+  border-radius: 0 4px 0 4px;
+  opacity: 0.15;
+}
+
+.geo-gold-bar {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 3px;
+  height: 80px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.geo-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Values strip */
+.values-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 80px;
+}
+
+.value-card {
+  background: var(--light-bg);
+  padding: 40px 28px;
+  text-align: center;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(74,172,180,0.04));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.value-card:hover {
+  border-bottom-color: var(--teal);
+  transform: translateY(-4px);
+}
+
+.value-card:hover::before { opacity: 1; }
+
+.value-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value-title-ar {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.value-title-en {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.value-desc {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.8;
+}
+
+/* ══════════════════════════════
+   COLLECTIONS
+══════════════════════════════ */
+.collections {
+  background: var(--ink);
+  padding: 120px 48px;
+}
+
+.collections-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.collections-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+}
+
+.collections-header .section-tag { color: var(--teal-light); }
+.collections-header .section-tag::before { background: var(--teal-light); }
+.collections-header .section-h2-ar { color: white; }
+
+.btn-outline-teal {
+  background: transparent;
+  color: var(--teal-light);
+  padding: 12px 28px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  border: 1px solid var(--teal);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-outline-teal:hover {
+  background: var(--teal);
+  color: white;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2px;
+}
+
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 3/4;
+  background: var(--ink-mid);
+}
+
+.collection-card-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.6s ease;
+  /* TODO: replace with real product photo — url("your-image-link-here") center top/cover no-repeat */
+  background: linear-gradient(160deg, var(--teal-deep) 0%, var(--ink-mid) 55%, var(--ink) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collection-card-bg::after {
+  content: '+ صورة المنتج';
+  font-family: 'Tajawal', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 1px;
+}
+
+.collection-card-bg.has-photo {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.collection-card-bg.has-photo::after {
+  content: '';
+}
+
+.collection-card:hover .collection-card-bg {
+  transform: scale(1.06);
+}
+
+.collection-card-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 32px 28px;
+  background: linear-gradient(to top, rgba(15,36,38,0.95) 0%, transparent 100%);
+  transform: translateY(8px);
+  transition: transform 0.4s ease;
+}
+
+.collection-card:hover .collection-card-info {
+  transform: translateY(0);
+}
+
+.col-cat {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teal-light);
+  margin-bottom: 8px;
+}
+
+.col-name-ar {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.col-name-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 2px;
+}
+
+.col-arrow {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(74,172,180,0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-light);
+  opacity: 0;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+.collection-card:hover .col-arrow {
+  opacity: 1;
+  border-color: var(--teal);
+  background: rgba(74,172,180,0.1);
+}
+
+/* ══════════════════════════════
+   BRAND STORY
+══════════════════════════════ */
+.story {
+  padding: 120px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.story-left { order: 2; }
+.story-right { order: 1; }
+
+.timeline {
+  position: relative;
+  padding-right: 32px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--teal), rgba(74,172,180,0.1));
+}
+
+.timeline-item {
+  position: relative;
+  padding-right: 32px;
+  padding-bottom: 40px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: var(--white);
+  border: 2px solid var(--teal);
+  border-radius: 50%;
+}
+
+.timeline-item.active::before {
+  background: var(--teal);
+}
+
+.tl-year {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.tl-title {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.tl-desc {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.8;
+}
+
+/* ══════════════════════════════
+   ACHIEVEMENTS
+══════════════════════════════ */
+.achievements {
+  background: var(--light-bg);
+  padding: 120px 48px;
+}
+
+.achievements-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.achieve-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.achieve-card {
+  background: white;
+  padding: 48px 40px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.achieve-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to left, var(--teal), var(--gold));
+  transition: width 0.4s ease;
+}
+
+.achieve-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-teal);
+  border-color: transparent;
+}
+
+.achieve-card:hover::after { width: 100%; }
+
+.achieve-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  font-weight: 300;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.achieve-num sup {
+  font-size: 32px;
+  color: var(--gold);
+}
+
+.achieve-title-ar {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.achieve-title-en {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.achieve-desc {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.8;
+}
+
+/* ══════════════════════════════
+   BRANCHES MAP
+══════════════════════════════ */
+.branches {
+  padding: 120px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.branches-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  margin-top: 60px;
+  align-items: start;
+}
+
+.branch-map {
+  background: var(--teal-pale);
+  border-radius: 4px;
+  aspect-ratio: 4/3;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.branch-map-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.branch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.branch-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: var(--light-bg);
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.branch-item:hover {
+  border-color: var(--teal);
+  background: white;
+  transform: translateX(-4px);
+}
+
+.branch-dot-small {
+  width: 10px;
+  height: 10px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.branch-dot-small.gold { background: var(--gold); }
+
+.branch-city {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.branch-address {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+.branch-status {
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.status-open {
+  background: rgba(74,172,180,0.12);
+  color: var(--teal-dark);
+}
+
+.status-soon {
+  background: rgba(212,168,75,0.12);
+  color: #8B6B1E;
+}
+
+/* ══════════════════════════════
+   CAREERS TEASER
+══════════════════════════════ */
+.careers-teaser {
+  background: linear-gradient(135deg, var(--teal-deep) 0%, var(--ink) 100%);
+  padding: 100px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.careers-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.06;
+}
+
+.careers-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.careers-left .section-tag { color: var(--teal-light); }
+.careers-left .section-tag::before { background: var(--teal-light); }
+.careers-left .section-h2-ar { color: white; }
+.careers-left .section-h2-en { color: rgba(255,255,255,0.3); }
+
+.careers-text {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 2;
+  margin-bottom: 36px;
+}
+
+.culture-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.culture-pill {
+  border: 1px solid rgba(74,172,180,0.3);
+  padding: 8px 18px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--teal-light);
+  border-radius: 2px;
+  background: rgba(74,172,180,0.06);
+}
+
+.careers-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.culture-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 32px 24px;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.culture-card:hover {
+  background: rgba(74,172,180,0.1);
+  border-color: rgba(74,172,180,0.3);
+}
+
+.culture-card-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 16px;
+  border: 1px solid rgba(74,172,180,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-light);
+  font-size: 18px;
+}
+
+.culture-card-title {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.culture-card-desc {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════
+   CONTACT
+══════════════════════════════ */
+.contact {
+  padding: 120px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 60px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--teal-pale);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+  color: var(--teal);
+}
+
+.contact-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.contact-value {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--ink);
+  direction: ltr;
+  text-align: right;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--charcoal);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--light-bg);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  outline: none;
+  transition: all 0.3s;
+  direction: rtl;
+}
+
+.form-input:focus {
+  border-color: var(--teal);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(74,172,180,0.08);
+}
+
+.form-textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.btn-submit {
+  width: 100%;
+  background: var(--teal);
+  color: white;
+  padding: 16px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-submit:hover { background: var(--teal-dark); }
+
+.form-success {
+  display: none;
+  background: rgba(74,172,180,0.1);
+  border: 1px solid var(--teal);
+  color: var(--teal-dark);
+  padding: 14px 16px;
+  border-radius: 2px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.form-success.visible { display: block; }
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+footer {
+  background: var(--ink);
+  padding: 80px 48px 40px;
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.footer-brand-desc {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.9;
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(74,172,180,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  border-color: var(--teal);
+  color: var(--teal-light);
+  background: rgba(74,172,180,0.08);
+}
+
+.footer-col-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teal-light);
+  margin-bottom: 24px;
+}
+
+.footer-link {
+  display: block;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+
+.footer-link:hover { color: var(--teal-light); }
+
+.footer-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin-bottom: 32px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.25);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-legal-link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+  transition: color 0.3s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-legal-link:hover { color: var(--teal-light); }
+
+/* ══════════════════════════════
+   ANIMATIONS
+══════════════════════════════ */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollLine {
+  0%, 100% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+  50%       { opacity: 1; transform: scaleY(1); transform-origin: top; }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ══════════════════════════════
+   MOBILE RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-content, .about-grid, .story-grid,
+  .contact-grid, .careers-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-right { display: none; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .story-left, .story-right { order: unset; }
+  .collections-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .achieve-grid { grid-template-columns: 1fr 1fr; }
+  .branches-grid { grid-template-columns: 1fr; }
+  .hero { min-height: auto; padding-bottom: 80px; }
+  .hero-content { padding-top: 100px; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-actions .btn-nav { display: none; }
+  .nav-toggle-mobile { display: block; }
+  .stats-inner, .values-row,
+  .achieve-grid, .careers-right, .footer-top { grid-template-columns: 1fr; }
+  .collections-grid { grid-template-columns: 1fr 1fr; }
+  .collections-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .about, .collections, .story, .achievements,
+  .branches, .careers-teaser, .contact { padding: 64px 20px; }
+  nav .nav-inner { padding: 0 20px; }
+  footer { padding: 60px 20px 32px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .hero-content { padding: 96px 20px 48px; gap: 32px; }
+  .hero-cta-row { flex-direction: column; align-items: stretch; }
+  .hero-cta-row button { width: 100%; }
+  .stat-item { border-left: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 32px 20px; }
+  .stat-item:last-child { border-bottom: none; }
+  .value-card { padding: 32px 20px; }
+  .achieve-card { padding: 36px 24px; }
+  .branch-item { padding: 18px; flex-direction: column; gap: 8px; }
+  .careers-inner, .contact-grid { gap: 40px; }
+  .form-input, .btn-submit { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  .hero-h1-ar { font-size: 40px; }
+  .hero-h1-en { font-size: 20px; letter-spacing: 3px; }
+  .hero-desc { font-size: 15px; }
+  .section-h2-ar { font-size: 28px; }
+  .collections-grid { grid-template-columns: 1fr; }
+  .achieve-grid { grid-template-columns: 1fr; }
+  .stat-number { font-size: 40px; }
+  .logo-ar { font-size: 18px; }
+  .about, .collections, .story, .achievements,
+  .branches, .careers-teaser, .contact { padding: 48px 16px; }
+  nav .nav-inner { padding: 0 16px; height: 64px; }
+  .mobile-menu-overlay { top: 64px; }
+  .achieve-num { font-size: 52px; }
+  .stats-inner { padding: 0 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="logo-wrap">
+      <svg class="logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 4 L38 22 L22 40 L6 22 Z" fill="none" stroke="#4AACB4" stroke-width="1.5"/>
+        <path d="M22 10 L32 22 L22 34 L12 22 Z" fill="none" stroke="#4AACB4" stroke-width="1"/>
+        <path d="M22 15 L28 22 L22 29 L16 22 Z" fill="#4AACB4" opacity="0.25"/>
+        <circle cx="22" cy="4" r="2" fill="#D4A84B"/>
+        <circle cx="38" cy="22" r="2" fill="#D4A84B"/>
+        <circle cx="22" cy="40" r="2" fill="#D4A84B"/>
+        <circle cx="6" cy="22" r="2" fill="#D4A84B"/>
+        <circle cx="22" cy="22" r="3" fill="#4AACB4"/>
+      </svg>
+      <div class="logo-text-wrap">
+        <span class="logo-ar">لاروش</span>
+        <span class="logo-en">LAROCHE</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about" data-en="About Us">من نحن</a></li>
+      <li><a href="#collections" data-en="Collections">المجموعات</a></li>
+      <li><a href="#story" data-en="Our Story">قصتنا</a></li>
+      <li><a href="#branches" data-en="Branches">الفروع</a></li>
+      <li><a href="#careers" data-en="Careers">الوظائف</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="lang-toggle">EN / AR</button>
+      <a href="#contact" class="btn-nav" data-en="Contact Us">تواصل معنا</a>
+      <button class="nav-toggle-mobile" id="navToggleBtn" aria-label="القائمة">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu-overlay" id="mobileMenu">
+  <ul>
+    <li><a href="#about" data-en="About Us">من نحن</a></li>
+    <li><a href="#collections" data-en="Collections">المجموعات</a></li>
+    <li><a href="#story" data-en="Our Story">قصتنا</a></li>
+    <li><a href="#branches" data-en="Branches">الفروع</a></li>
+    <li><a href="#careers" data-en="Careers">الوظائف</a></li>
+    <li><a href="#contact" data-en="Contact Us">تواصل معنا</a></li>
+  </ul>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <svg class="hero-geo hero-geo-1" viewBox="0 0 600 600" fill="none" style="top:-60px;left:-60px;">
+      <rect x="50" y="50" width="500" height="500" stroke="#4AACB4" stroke-width="0.5" opacity="0.12" transform="rotate(45 300 300)"/>
+      <rect x="100" y="100" width="400" height="400" stroke="#4AACB4" stroke-width="0.5" opacity="0.10" transform="rotate(45 300 300)"/>
+      <rect x="150" y="150" width="300" height="300" stroke="#4AACB4" stroke-width="0.5" opacity="0.08" transform="rotate(45 300 300)"/>
+      <rect x="200" y="200" width="200" height="200" stroke="#D4A84B" stroke-width="0.5" opacity="0.07" transform="rotate(45 300 300)"/>
+      <line x1="300" y1="0" x2="300" y2="600" stroke="#4AACB4" stroke-width="0.3" opacity="0.05"/>
+      <line x1="0" y1="300" x2="600" y2="300" stroke="#4AACB4" stroke-width="0.3" opacity="0.05"/>
+    </svg>
+    <svg class="hero-geo hero-geo-2" viewBox="0 0 500 500" fill="none" style="bottom:-80px;right:-60px;opacity:1;">
+      <rect x="40" y="40" width="420" height="420" stroke="#4AACB4" stroke-width="0.5" opacity="0.06" transform="rotate(45 250 250)"/>
+      <rect x="100" y="100" width="300" height="300" stroke="#4AACB4" stroke-width="0.5" opacity="0.05" transform="rotate(45 250 250)"/>
+    </svg>
+    <svg style="position:absolute;top:80px;right:60px;opacity:0.08;" width="120" height="120" viewBox="0 0 120 120" fill="none">
+      <rect x="10" y="10" width="100" height="100" stroke="#4AACB4" stroke-width="1"/>
+      <rect x="25" y="25" width="70" height="70" stroke="#D4A84B" stroke-width="0.8"/>
+      <rect x="40" y="40" width="40" height="40" stroke="#4AACB4" stroke-width="0.6"/>
+      <circle cx="60" cy="60" r="8" stroke="#4AACB4" stroke-width="0.8"/>
+    </svg>
+  </div>
+  <div class="hero-gradient"></div>
+  <div class="hero-beam"></div>
+  <div class="hero-beam-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow" data-en="Modern Youth Fashion Brand · Est. 2022 · Jeddah">علامة أزياء عصرية شبابية · Est. 2022 · جدة</div>
+      <h1>
+        <div class="hero-h1-ar" data-en="Youthful &lt;span&gt;Fashion&lt;/span&gt;&lt;br&gt;With a Saudi Touch">أزياء <span>شبابية</span><br>بلمسة سعودية</div>
+        <div class="hero-h1-en">Modern · Saudi · Fashion</div>
+      </h1>
+      <p class="hero-desc" data-en="LAROCHE is a Saudi brand specialized in modern youth fashion — combining high quality, contemporary design, and fair pricing to deliver an exceptional shopping experience for the new Saudi generation.">
+        لاروش علامة سعودية متخصصة في الأزياء العصرية الشبابية — تجمع بين الجودة العالية والتصميم الحديث والأسعار المناسبة، لتقديم تجربة تسوق استثنائية للجيل السعودي الجديد.
+      </p>
+      <div class="hero-cta-row">
+        <button class="btn-hero-primary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})"><span data-en="Discover the Brand">اكتشف العلامة</span></button>
+        <button class="btn-hero-ghost" onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})" data-en="Browse Collections">تصفح المجموعات</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-logo-display">
+        <svg width="380" height="380" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="360" height="360" stroke="rgba(74,172,180,0.15)" stroke-width="1"/>
+          <rect x="30" y="30" width="320" height="320" stroke="rgba(74,172,180,0.10)" stroke-width="1"/>
+          <line x1="10" y1="40" x2="10" y2="10" stroke="#4AACB4" stroke-width="1.5" opacity="0.4"/>
+          <line x1="10" y1="10" x2="40" y2="10" stroke="#4AACB4" stroke-width="1.5" opacity="0.4"/>
+          <line x1="370" y1="340" x2="370" y2="370" stroke="#4AACB4" stroke-width="1.5" opacity="0.4"/>
+          <line x1="370" y1="370" x2="340" y2="370" stroke="#4AACB4" stroke-width="1.5" opacity="0.4"/>
+          <line x1="10" y1="340" x2="10" y2="370" stroke="#4AACB4" stroke-width="1.5" opacity="0.4"/>
+          <line x1="10" y1="370" x2="40" y2="370" stroke="#4AACB4" stroke-width="1.5" opacity="0.4"/>
+          <line x1="370" y1="40" x2="370" y2="10" stroke="#4AACB4" stroke-width="1.5" opacity="0.4"/>
+          <line x1="370" y1="10" x2="340" y2="10" stroke="#4AACB4" stroke-width="1.5" opacity="0.4"/>
+          <line x1="30" y1="30" x2="160" y2="160" stroke="rgba(74,172,180,0.06)" stroke-width="0.8"/>
+          <line x1="350" y1="30" x2="220" y2="160" stroke="rgba(74,172,180,0.06)" stroke-width="0.8"/>
+          <line x1="30" y1="350" x2="160" y2="220" stroke="rgba(74,172,180,0.06)" stroke-width="0.8"/>
+          <line x1="350" y1="350" x2="220" y2="220" stroke="rgba(74,172,180,0.06)" stroke-width="0.8"/>
+          <rect x="140" y="140" width="100" height="100" stroke="#4AACB4" stroke-width="1.5" transform="rotate(45 190 190)" fill="rgba(74,172,180,0.04)"/>
+          <rect x="158" y="158" width="64" height="64" stroke="#4AACB4" stroke-width="1" transform="rotate(45 190 190)" fill="rgba(74,172,180,0.06)"/>
+          <rect x="172" y="172" width="36" height="36" stroke="#D4A84B" stroke-width="1" transform="rotate(45 190 190)" fill="rgba(212,168,75,0.06)"/>
+          <circle cx="190" cy="190" r="5" fill="#4AACB4"/>
+          <circle cx="190" cy="119" r="3.5" fill="#D4A84B"/>
+          <circle cx="261" cy="190" r="3.5" fill="#D4A84B"/>
+          <circle cx="190" cy="261" r="3.5" fill="#D4A84B"/>
+          <circle cx="119" cy="190" r="3.5" fill="#D4A84B"/>
+          <text x="190" y="308" font-family="Tajawal,sans-serif" font-size="26" font-weight="700" fill="white" text-anchor="middle" letter-spacing="3">لاروش</text>
+          <text x="190" y="328" font-family="Outfit,sans-serif" font-size="9" fill="rgba(74,172,180,0.6)" text-anchor="middle" letter-spacing="4">LAROCHE · EST. 2022</text>
+          <rect x="68" y="62" width="60" height="22" rx="2" fill="rgba(74,172,180,0.08)" stroke="rgba(74,172,180,0.2)" stroke-width="0.8"/>
+          <text x="98" y="77" font-family="Outfit,sans-serif" font-size="8" fill="rgba(74,172,180,0.7)" text-anchor="middle" letter-spacing="1">EST. 2022</text>
+          <rect x="252" y="62" width="60" height="22" rx="2" fill="rgba(212,168,75,0.08)" stroke="rgba(212,168,75,0.2)" stroke-width="0.8"/>
+          <text x="282" y="77" font-family="Outfit,sans-serif" font-size="8" fill="rgba(212,168,75,0.7)" text-anchor="middle" letter-spacing="1">500K+ CLT</text>
+          <rect x="68" y="296" width="60" height="22" rx="2" fill="rgba(74,172,180,0.08)" stroke="rgba(74,172,180,0.2)" stroke-width="0.8"/>
+          <text x="98" y="311" font-family="Outfit,sans-serif" font-size="8" fill="rgba(74,172,180,0.7)" text-anchor="middle" letter-spacing="1">JEDDAH</text>
+          <rect x="252" y="296" width="60" height="22" rx="2" fill="rgba(212,168,75,0.08)" stroke="rgba(212,168,75,0.2)" stroke-width="0.8"/>
+          <text x="282" y="311" font-family="Outfit,sans-serif" font-size="8" fill="rgba(212,168,75,0.7)" text-anchor="middle" letter-spacing="1">10 BRANCHES</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-text">Scroll</div>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════ STATS ═══════════ -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <span class="stat-number" id="cnt1">0<span>+</span></span>
+      <span class="stat-label-ar" data-en="Happy Customers">عميل راضٍ</span>
+      <span class="stat-label-en">Happy Customers</span>
+    </div>
+    <div class="stat-item reveal reveal-delay-1">
+      <span class="stat-number">2022</span>
+      <span class="stat-label-ar" data-en="Year Founded">سنة التأسيس</span>
+      <span class="stat-label-en">Year Founded</span>
+    </div>
+    <div class="stat-item reveal reveal-delay-2">
+      <span class="stat-number" id="cnt2">0<span>+</span></span>
+      <span class="stat-label-ar" data-en="Active Branches KSA">فرع نشط في المملكة</span>
+      <span class="stat-label-en">Active Branches KSA</span>
+    </div>
+    <div class="stat-item reveal reveal-delay-3">
+      <span class="stat-number">5</span>
+      <span class="stat-label-ar" data-en="Product Categories">فئات منتجات</span>
+      <span class="stat-label-en">Product Categories</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="section-tag" data-en="About Us">من نحن · About Us</div>
+      <h2 class="section-h2-ar" data-en="A Saudi Brand&lt;br&gt;With a Modern Spirit">علامة سعودية<br>بروح عصرية</h2>
+      <p class="section-h2-en">Saudi Soul. Modern Vision.</p>
+      <p class="about-text" data-en="LAROCHE is a Saudi brand founded in 2022 in Jeddah, aiming to deliver a modern youth fashion experience that combines high quality with distinctive design reflecting the identity of the modern Saudi generation.">
+        لاروش علامة سعودية تأسست عام 2022 في جدة، بهدف تقديم تجربة أزياء عصرية شبابية تجمع بين الجودة العالية والتصميم المميز الذي يعكس هوية الجيل السعودي الحديث.
+      </p>
+      <p class="about-text" data-en="We believe elegance is a right for everyone — so we offer our products at competitive prices without compromising global quality standards, while preserving an authentic Saudi spirit in every design.">
+        نؤمن بأن الأناقة حق للجميع — لذا نقدم منتجاتنا بأسعار تنافسية دون التنازل عن معايير الجودة العالمية، مع الحفاظ على الروح السعودية الأصيلة في كل تصميم.
+      </p>
+    </div>
+    <div class="about-visual reveal reveal-delay-2">
+      <div class="brand-geo-display">
+        <div class="geo-bg-rect"></div>
+        <div class="geo-accent"></div>
+        <div class="geo-gold-bar"></div>
+        <div class="geo-center">
+          <svg width="260" height="260" viewBox="0 0 260 260" fill="none">
+            <rect x="4" y="4" width="252" height="252" stroke="#4AACB4" stroke-width="1" opacity="0.3"/>
+            <rect x="16" y="16" width="228" height="228" stroke="#4AACB4" stroke-width="0.6" opacity="0.2"/>
+            <rect x="95" y="95" width="70" height="70" stroke="#4AACB4" stroke-width="1.2" transform="rotate(45 130 130)" fill="rgba(74,172,180,0.06)"/>
+            <rect x="108" y="108" width="44" height="44" stroke="#D4A84B" stroke-width="0.8" transform="rotate(45 130 130)" fill="rgba(212,168,75,0.04)"/>
+            <circle cx="130" cy="130" r="4" fill="#4AACB4"/>
+            <circle cx="130" cy="80" r="3" fill="#D4A84B"/>
+            <circle cx="180" cy="130" r="3" fill="#D4A84B"/>
+            <circle cx="130" cy="180" r="3" fill="#D4A84B"/>
+            <circle cx="80" cy="130" r="3" fill="#D4A84B"/>
+            <text x="130" y="218" font-family="Tajawal,sans-serif" font-size="18" font-weight="700" fill="#2E8A91" text-anchor="middle">لاروش</text>
+            <text x="130" y="234" font-family="Outfit,sans-serif" font-size="8" fill="#8AADB1" text-anchor="middle" letter-spacing="3">LAROCHE · 2022</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Values -->
+  <div class="values-row">
+    <div class="value-card reveal">
+      <div class="value-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M16 2 L30 16 L16 30 L2 16 Z" fill="none" stroke="#4AACB4" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="5" fill="#4AACB4" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="value-title-ar" data-en="Quality">الجودة</div>
+      <div class="value-title-en">Quality</div>
+      <p class="value-desc" data-en="We select the finest materials and follow the highest production standards to ensure a product that lasts and satisfies">نختار أفضل الخامات ونتبع أعلى معايير الإنتاج لضمان منتج يدوم ويُرضي</p>
+    </div>
+    <div class="value-card reveal reveal-delay-1">
+      <div class="value-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect x="4" y="4" width="24" height="24" rx="2" fill="none" stroke="#4AACB4" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="5" fill="#D4A84B" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="value-title-ar" data-en="Comfort">الراحة</div>
+      <div class="value-title-en">Comfort</div>
+      <p class="value-desc" data-en="Thoughtful designs blending elegance and everyday comfort to match your lifestyle">تصاميم مدروسة تمزج بين الأناقة والراحة اليومية لتناسب إيقاع حياتك</p>
+    </div>
+    <div class="value-card reveal reveal-delay-2">
+      <div class="value-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M16 2 L28 9 L28 23 L16 30 L4 23 L4 9 Z" fill="none" stroke="#4AACB4" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="4" fill="#4AACB4" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="value-title-ar" data-en="Modern Design">التصميم العصري</div>
+      <div class="value-title-en">Modern Design</div>
+      <p class="value-desc" data-en="We follow the latest global fashion trends and translate them with a distinctive Saudi spirit">نتابع أحدث صيحات الموضة العالمية ونترجمها بروح سعودية مميزة</p>
+    </div>
+    <div class="value-card reveal reveal-delay-3">
+      <div class="value-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="13" fill="none" stroke="#D4A84B" stroke-width="1.5"/>
+          <path d="M10 16 L14 20 L22 12" stroke="#4AACB4" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="value-title-ar" data-en="Affordable Value">القيمة المناسبة</div>
+      <div class="value-title-en">Affordable Value</div>
+      <p class="value-desc" data-en="Fair pricing for real quality — luxury doesn't need to be overpriced">سعر عادل مقابل جودة حقيقية — الرفاهية لا تحتاج ثمناً مبالغاً فيه</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ COLLECTIONS ═══════════ -->
+<section class="collections" id="collections">
+  <div class="collections-inner">
+    <div class="collections-header reveal">
+      <div>
+        <div class="section-tag" data-en="Collections">مجموعاتنا · Collections</div>
+        <h2 class="section-h2-ar" data-en="Fashion That Speaks&lt;br&gt;Your Personality">أزياء تعبّر<br>عن شخصيتك</h2>
+      </div>
+      <a href="#" class="btn-outline-teal" data-en="Browse All">تصفح الكل</a>
+    </div>
+    <div class="collections-grid">
+      <div class="collection-card reveal">
+        <div class="collection-card-bg has-photo" style="background-image:url('/images/collection-1.png');"></div>
+        <div class="col-arrow">←</div>
+        <div class="collection-card-info">
+          <div class="col-cat" data-en="Men">رجالي</div>
+          <div class="col-name-ar" data-en="Classic Shirts">قمصان كلاسيك</div>
+          <div class="col-name-en">Classic Shirts</div>
+        </div>
+      </div>
+      <div class="collection-card reveal reveal-delay-1">
+        <div class="collection-card-bg"></div>
+        <div class="col-arrow">←</div>
+        <div class="collection-card-info">
+          <div class="col-cat" data-en="Men">رجالي</div>
+          <div class="col-name-ar" data-en="Modern Pants">بناطيل عصرية</div>
+          <div class="col-name-en">Modern Pants</div>
+        </div>
+      </div>
+      <div class="collection-card reveal reveal-delay-2">
+        <div class="collection-card-bg"></div>
+        <div class="col-arrow">←</div>
+        <div class="collection-card-info">
+          <div class="col-cat" data-en="Youth">شبابي</div>
+          <div class="col-name-ar" data-en="Hoodies">هوديز</div>
+          <div class="col-name-en">Hoodies</div>
+        </div>
+      </div>
+      <div class="collection-card reveal reveal-delay-3">
+        <div class="collection-card-bg"></div>
+        <div class="col-arrow">←</div>
+        <div class="collection-card-info">
+          <div class="col-cat" data-en="Summer">صيفي</div>
+          <div class="col-name-ar" data-en="Shorts">شورتات</div>
+          <div class="col-name-en">Shorts</div>
+        </div>
+      </div>
+      <div class="collection-card reveal reveal-delay-4">
+        <div class="collection-card-bg"></div>
+        <div class="col-arrow">←</div>
+        <div class="collection-card-info">
+          <div class="col-cat" data-en="Accessories">إكسسوارات</div>
+          <div class="col-name-ar" data-en="Accessories">إكسسوارات لاروش</div>
+          <div class="col-name-en">Accessories</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ STORY ═══════════ -->
+<section class="story" id="story">
+  <div class="story-grid">
+    <div class="story-right reveal">
+      <div class="section-tag" data-en="Brand Story">قصتنا · Brand Story</div>
+      <h2 class="section-h2-ar" data-en="A Journey From Jeddah&lt;br&gt;To the Kingdom">رحلة من جدة<br>إلى المملكة</h2>
+      <p class="section-h2-en">From Jeddah, to the Kingdom.</p>
+      <p class="about-text" style="color:var(--mid);" data-en="LAROCHE began its journey in 2022 with a simple idea: offering authentic modern Saudi fashion — not a copy of the West, but an independent identity reflecting the spirit of the new Saudi generation.">
+        بدأت لاروش رحلتها عام 2022 بفكرة بسيطة: تقديم أزياء سعودية عصرية حقيقية — لا تقليد للغرب، بل هوية مستقلة تعكس روح الجيل السعودي الجديد.
+      </p>
+    </div>
+    <div class="story-left reveal reveal-delay-1">
+      <div class="timeline">
+        <div class="timeline-item active">
+          <div class="tl-year" data-en="2022 · Founding">2022 · التأسيس</div>
+          <div class="tl-title" data-en="The Launch of LAROCHE">انطلاقة لاروش</div>
+          <p class="tl-desc" data-en="Launching the brand with its first collection of shirts and pants, focusing on quality and modern design.">إطلاق العلامة التجارية بمجموعتها الأولى من القمصان والبناطيل، مع تركيز على الجودة والتصميم العصري.</p>
+        </div>
+        <div class="timeline-item active">
+          <div class="tl-year" data-en="2023 · Growth">2023 · النمو</div>
+          <div class="tl-title" data-en="500,000 Happy Customers">500,000 عميل راضٍ</div>
+          <p class="tl-desc" data-en="Achieving exceptional growth in the Saudi market and expanding the product line to include shorts and hoodies.">تحقيق نمو استثنائي في السوق السعودية وتوسيع خط المنتجات ليشمل الشورتات والهوديز.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year" data-en="2024 · Expansion">2024 · التوسع</div>
+          <div class="tl-title" data-en="Major Branch Expansion Plan">خطة الفروع الكبرى</div>
+          <p class="tl-desc" data-en="Launching a strategic plan to open new branches across different regions of the Kingdom.">إطلاق خطة استراتيجية لفتح فروع جديدة في مختلف مناطق المملكة.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-year" data-en="2026 · The Future">2026 · المستقبل</div>
+          <div class="tl-title" data-en="Saudi Leadership">الريادة السعودية</div>
+          <p class="tl-desc" data-en="Expanding to new branches and excelling as one of the leading Saudi brands in modern youth fashion.">التوسع إلى فروع جديدة والتميز كإحدى أبرز العلامات السعودية في قطاع الأزياء العصرية الشبابية.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ACHIEVEMENTS ═══════════ -->
+<section class="achievements" id="achievements">
+  <div class="achievements-inner">
+    <div class="reveal">
+      <div class="section-tag" data-en="Achievements">إنجازاتنا · Achievements</div>
+      <h2 class="section-h2-ar" data-en="Numbers That&lt;br&gt;Speak for Themselves">أرقام تتحدث<br>عن نفسها</h2>
+    </div>
+    <div class="achieve-grid">
+      <div class="achieve-card reveal">
+        <div class="achieve-num">500K<sup>+</sup></div>
+        <div class="achieve-title-ar" data-en="Happy Customers">عميل راضٍ</div>
+        <div class="achieve-title-en">Happy Customers</div>
+        <p class="achieve-desc" data-en="Half a million customers trusted LAROCHE and came back to shop again — a number that reflects the brand's strength and reputation.">نصف مليون عميل وثق بلاروش وعاد للتسوق مرة أخرى — رقم يعكس قوة العلامة وسمعتها.</p>
+      </div>
+      <div class="achieve-card reveal reveal-delay-1">
+        <div class="achieve-num" style="color:var(--gold);">18<sup>+</sup></div>
+        <div class="achieve-title-ar" data-en="Active Branches">فروع نشطة</div>
+        <div class="achieve-title-en">Active Branches</div>
+        <p class="achieve-desc" data-en="Branches open across different regions of the Kingdom, as part of an ongoing expansion plan to bring LAROCHE closer to every customer.">فروع مفتوحة في مختلف مناطق المملكة، ضمن خطة توسع مستمرة لتقريب لاروش من كل عملائها.</p>
+      </div>
+      <div class="achieve-card reveal reveal-delay-2">
+        <div class="achieve-num">5<sup>+</sup></div>
+        <div class="achieve-title-ar" data-en="Years of Growth">سنوات من النمو</div>
+        <div class="achieve-title-en">Years of Growth</div>
+        <p class="achieve-desc" data-en="Since 2022, LAROCHE has been growing rapidly — a young brand building its place with confidence and consistency.">منذ 2022 ولاروش في نمو متسارع — علامة تجارية شابة تبني مكانتها بثقة واستمرارية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BRANCHES ═══════════ -->
+<section class="branches" id="branches">
+  <div class="reveal">
+    <div class="section-tag" data-en="Our Branches">فروعنا · Our Branches</div>
+    <h2 class="section-h2-ar" data-en="We Are Near You">نحن بالقرب منك</h2>
+    <p class="section-h2-en">Expanding Across the Kingdom</p>
+  </div>
+  <div class="branches-grid">
+    <div class="branch-map reveal">
+      <div class="branch-map-inner">
+        <svg viewBox="0 0 500 460" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:95%;height:95%;">
+          <rect width="500" height="460" fill="#DDE8EC" rx="4"/>
+          <line x1="50" y1="230" x2="480" y2="230" stroke="rgba(74,172,180,0.12)" stroke-width="0.5" stroke-dasharray="4,6"/>
+          <line x1="265" y1="20" x2="265" y2="440" stroke="rgba(74,172,180,0.12)" stroke-width="0.5" stroke-dasharray="4,6"/>
+          <path d="M 307.6 306.2 L 311.9 296.9 L 326.2 297.1 L 328.1 294.4 L 329.4 288.8 L 334.4 283.0 L 332.6 280.5 L 334.4 278.5 L 341.2 277.2 L 342.7 270.4 L 346.4 269.0 L 349.7 265.4 L 354.2 263.5 L 357.9 260.0 L 354.9 260.5 L 355.9 256.2 L 358.8 254.5 L 359.0 249.8 L 357.2 246.3 L 358.0 241.2 L 361.8 236.3 L 363.9 235.5 L 365.4 229.1 L 370.3 221.8 L 373.5 218.3 L 377.8 219.4 L 379.5 217.3 L 382.1 218.0 L 379.1 213.0 L 384.4 212.1 L 384.9 208.7 L 402.4 186.7 L 403.3 186.3 L 450.1 180.2 L 451.7 181.8 L 460.0 167.7 L 447.8 129.5 L 392.1 110.3 L 339.1 103.0 L 321.1 94.1 L 310.5 81.1 L 307.5 74.0 L 303.1 71.5 L 299.0 71.4 L 294.1 77.5 L 286.9 76.5 L 270.4 78.2 L 265.4 80.4 L 251.3 80.2 L 245.7 78.9 L 239.2 78.8 L 234.5 82.0 L 232.5 82.0 L 228.2 78.4 L 227.3 70.8 L 229.1 67.9 L 225.9 63.4 L 221.3 60.3 L 220.3 66.0 L 216.7 69.9 L 216.7 72.3 L 212.9 75.5 L 212.2 80.9 L 204.2 87.8 L 201.4 89.5 L 196.8 96.6 L 196.2 100.1 L 191.9 104.6 L 192.7 107.2 L 190.6 109.6 L 187.2 116.9 L 187.0 120.0 L 184.1 121.8 L 184.2 124.1 L 181.1 125.6 L 179.2 129.0 L 170.7 135.0 L 168.0 134.7 L 162.9 138.4 L 160.3 143.9 L 156.4 147.4 L 152.4 154.9 L 154.1 156.6 L 152.4 162.4 L 149.9 166.7 L 151.0 168.2 L 152.4 178.8 L 147.4 187.2 L 143.4 198.7 L 142.3 198.2 L 140.7 202.9 L 133.8 208.5 L 126.3 212.8 L 123.5 212.4 L 122.2 215.8 L 116.5 223.8 L 118.9 226.0 L 118.0 230.6 L 113.7 235.2 L 115.2 235.2 L 110.4 241.7 L 107.4 243.6 L 108.0 246.9 L 105.1 248.1 L 99.4 258.8 L 95.7 264.5 L 92.0 268.2 L 91.6 270.1 L 86.9 275.4 L 85.7 278.9 L 80.6 287.3 L 77.5 288.7 L 70.0 288.2 L 70.5 291.8 L 72.9 296.8 L 72.4 299.6 L 75.6 313.4 L 95.5 310.1 L 104.0 316.3 L 109.2 323.8 L 122.5 326.4 L 125.5 332.9 L 131.9 336.6 L 122.7 347.0 L 112.9 356.8 L 150.2 367.1 L 153.6 369.7 L 176.3 366.0 L 178.4 365.1 L 208.0 348.4 L 222.6 336.5 L 256.6 310.4 L 287.6 307.6 L 290.8 308.2 L 307.6 306.2 Z"
+                fill="#E8F4F6" stroke="#4AACB4" stroke-width="1.2" stroke-linejoin="round"/>
+          <g>
+            <circle cx="155" cy="273" r="10" fill="rgba(74,172,180,0.25)">
+              <animate attributeName="r" values="10;16;10" dur="2.2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.7;0.15;0.7" dur="2.2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="155" cy="273" r="5" fill="#4AACB4" stroke="white" stroke-width="1"/>
+            <rect x="165" y="259" width="30" height="14" rx="7" fill="#2E8A91"/>
+            <text x="180" y="269" font-family="Outfit,sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="700">×4</text>
+            <line x1="155" y1="268" x2="155" y2="244" stroke="#4AACB4" stroke-width="0.8" opacity="0.7"/>
+            <rect x="119" y="226" width="72" height="18" rx="2" fill="rgba(30,62,66,0.88)"/>
+            <text x="155" y="238" font-family="Tajawal,sans-serif" font-size="10" fill="#7FCDD3" text-anchor="middle" font-weight="500">جدة</text>
+          </g>
+          <g>
+            <circle cx="162" cy="203" r="10" fill="rgba(74,172,180,0.25)">
+              <animate attributeName="r" values="10;15;10" dur="2.4s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.7;0.15;0.7" dur="2.4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="162" cy="203" r="5" fill="#4AACB4" stroke="white" stroke-width="1"/>
+            <line x1="162" y1="198" x2="162" y2="174" stroke="#4AACB4" stroke-width="0.8" opacity="0.7"/>
+            <rect x="122" y="156" width="80" height="18" rx="2" fill="rgba(30,62,66,0.88)"/>
+            <text x="162" y="168" font-family="Tajawal,sans-serif" font-size="10" fill="#7FCDD3" text-anchor="middle" font-weight="500">المدينة المنورة</text>
+          </g>
+          <g>
+            <circle cx="200" cy="93" r="10" fill="rgba(74,172,180,0.25)">
+              <animate attributeName="r" values="10;15;10" dur="2.8s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.7;0.15;0.7" dur="2.8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="200" cy="93" r="5" fill="#4AACB4" stroke="white" stroke-width="1"/>
+            <line x1="200" y1="98" x2="200" y2="119" stroke="#4AACB4" stroke-width="0.8" opacity="0.7"/>
+            <rect x="164" y="119" width="72" height="18" rx="2" fill="rgba(30,62,66,0.88)"/>
+            <text x="200" y="131" font-family="Tajawal,sans-serif" font-size="10" fill="#7FCDD3" text-anchor="middle" font-weight="500">سكاكا</text>
+          </g>
+          <g>
+            <circle cx="294" cy="199" r="10" fill="rgba(74,172,180,0.25)">
+              <animate attributeName="r" values="10;15;10" dur="2.6s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.7;0.15;0.7" dur="2.6s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="294" cy="199" r="5" fill="#4AACB4" stroke="white" stroke-width="1"/>
+            <rect x="304" y="185" width="30" height="14" rx="7" fill="#2E8A91"/>
+            <text x="319" y="195" font-family="Outfit,sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="700">×3</text>
+            <line x1="294" y1="194" x2="294" y2="170" stroke="#4AACB4" stroke-width="0.8" opacity="0.7"/>
+            <rect x="258" y="152" width="72" height="18" rx="2" fill="rgba(30,62,66,0.88)"/>
+            <text x="294" y="164" font-family="Tajawal,sans-serif" font-size="10" fill="#7FCDD3" text-anchor="middle" font-weight="500">الرياض</text>
+          </g>
+          <g>
+            <circle cx="357" cy="160" r="10" fill="rgba(74,172,180,0.25)">
+              <animate attributeName="r" values="10;15;10" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.7;0.15;0.7" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="357" cy="160" r="5" fill="#4AACB4" stroke="white" stroke-width="1"/>
+            <line x1="357" y1="155" x2="357" y2="128" stroke="#4AACB4" stroke-width="0.8" opacity="0.7"/>
+            <rect x="317" y="110" width="80" height="18" rx="2" fill="rgba(30,62,66,0.88)"/>
+            <text x="357" y="122" font-family="Tajawal,sans-serif" font-size="10" fill="#7FCDD3" text-anchor="middle" font-weight="500">الدمام</text>
+          </g>
+          <g transform="translate(60, 400)">
+            <circle cx="8" cy="8" r="5" fill="#4AACB4" stroke="white" stroke-width="1"/>
+            <text x="18" y="12" font-family="Tajawal,sans-serif" font-size="9" fill="#2C4A4E">فروعنا</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="branch-list reveal reveal-delay-1">
+      <div class="branch-item">
+        <div class="branch-dot-small"></div>
+        <div style="flex:1;">
+          <div class="branch-city">جدة — Jeddah <span style="font-size:12px;color:var(--teal);font-weight:400;margin-right:8px;" data-en="4 branches">4 فروع</span></div>
+          <div class="branch-address" data-en="Main branch + 3 additional branches · Jeddah, Saudi Arabia&lt;br&gt;Phone: 0539900083">الفرع الرئيسي + 3 فروع إضافية · جدة، المملكة العربية السعودية<br>هاتف: 0539900083</div>
+          <span class="branch-status status-open">مفتوح الآن · Open</span>
+        </div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-dot-small"></div>
+        <div style="flex:1;">
+          <div class="branch-city">الرياض — Riyadh <span style="font-size:12px;color:var(--teal);font-weight:400;margin-right:8px;" data-en="3 branches">3 فروع</span></div>
+          <div class="branch-address" data-en="3 branches in the capital · Riyadh, Saudi Arabia">3 فروع في العاصمة · الرياض، المملكة العربية السعودية</div>
+          <span class="branch-status status-open">مفتوح الآن · Open</span>
+        </div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-dot-small"></div>
+        <div>
+          <div class="branch-city">الدمام — Dammam</div>
+          <div class="branch-address" data-en="Eastern Province, Saudi Arabia">المنطقة الشرقية، المملكة العربية السعودية</div>
+          <span class="branch-status status-open">مفتوح الآن · Open</span>
+        </div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-dot-small"></div>
+        <div>
+          <div class="branch-city">سكاكا — Sakaka</div>
+          <div class="branch-address" data-en="Al-Jouf Region, Saudi Arabia">منطقة الجوف، المملكة العربية السعودية</div>
+          <span class="branch-status status-open">مفتوح الآن · Open</span>
+        </div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-dot-small"></div>
+        <div>
+          <div class="branch-city">المدينة المنورة — Madinah</div>
+          <div class="branch-address" data-en="Madinah, Saudi Arabia">المدينة المنورة، المملكة العربية السعودية</div>
+          <span class="branch-status status-open">مفتوح الآن · Open</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CAREERS ═══════════ -->
+<section class="careers-teaser" id="careers">
+  <div class="careers-bg">
+    <svg viewBox="0 0 800 600" fill="none" width="100%" height="100%">
+      <rect x="40" y="40" width="720" height="520" stroke="#4AACB4" stroke-width="0.8"/>
+      <rect x="80" y="80" width="640" height="440" stroke="#4AACB4" stroke-width="0.5"/>
+      <line x1="40" y1="300" x2="760" y2="300" stroke="#4AACB4" stroke-width="0.3"/>
+      <line x1="400" y1="40" x2="400" y2="560" stroke="#4AACB4" stroke-width="0.3"/>
+    </svg>
+  </div>
+  <div class="careers-inner">
+    <div class="careers-left reveal">
+      <div class="section-tag" data-en="Careers">انضم إلينا · Careers</div>
+      <p class="careers-text" data-en="Join a team that makes an impact&lt;br&gt;Together we build a Saudi brand that matches ambition and inspires the market">
+        انضم إلى فريق يصنع الأثر<br>
+        معاً نبني علامة سعودية تواكب الطموح وتلهم السوق
+      </p>
+      <div class="culture-pills">
+        <div class="culture-pill" data-en="Passion">الشغف</div>
+        <div class="culture-pill" data-en="Creativity">الإبداع</div>
+        <div class="culture-pill" data-en="Collaboration">التعاون</div>
+        <div class="culture-pill" data-en="Growth">التطوير</div>
+      </div>
+      <button class="btn-hero-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><span data-en="Browse Jobs">تصفح الوظائف</span></button>
+    </div>
+    <div class="careers-right reveal reveal-delay-1">
+      <div class="culture-card">
+        <div class="culture-card-icon">✦</div>
+        <div class="culture-card-title" data-en="Creative Environment">بيئة إبداعية</div>
+        <p class="culture-card-desc" data-en="We encourage new ideas and give the team space to express themselves">نشجع الأفكار الجديدة ونمنح الفريق مساحة للتعبير</p>
+      </div>
+      <div class="culture-card">
+        <div class="culture-card-icon">◈</div>
+        <div class="culture-card-title" data-en="Fast Growth">نمو سريع</div>
+        <p class="culture-card-desc" data-en="Real career growth opportunities in a brand that's expanding">فرص تطور مهني حقيقية في علامة في مرحلة توسع</p>
+      </div>
+      <div class="culture-card">
+        <div class="culture-card-icon">◇</div>
+        <div class="culture-card-title" data-en="Team Spirit">روح الفريق</div>
+        <p class="culture-card-desc" data-en="A culture built on mutual respect and support">ثقافة تقوم على الاحترام والدعم المتبادل</p>
+      </div>
+      <div class="culture-card">
+        <div class="culture-card-icon">○</div>
+        <div class="culture-card-title" data-en="Real Impact">تأثير حقيقي</div>
+        <p class="culture-card-desc" data-en="Every employee contributes to building a brand seen by millions">كل موظف يساهم في بناء علامة يراها الملايين</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section class="contact" id="contact">
+  <div class="reveal">
+    <div class="section-tag" data-en="Contact">تواصل معنا · Contact</div>
+    <h2 class="section-h2-ar" data-en="We'd Love to Hear From You">يسعدنا سماعك</h2>
+    <p class="section-h2-en">We'd Love to Hear from You.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-info-item">
+        <div class="contact-icon">✉</div>
+        <div>
+          <div class="contact-label" data-en="Email">البريد الإلكتروني</div>
+          <div class="contact-value">info@laroche.sa</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">✉</div>
+        <div>
+          <div class="contact-label" data-en="Careers">التوظيف</div>
+          <div class="contact-value">careers@laroche.sa</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">☎</div>
+        <div>
+          <div class="contact-label" data-en="Phone">الهاتف</div>
+          <div class="contact-value">0539900083</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">◎</div>
+        <div>
+          <div class="contact-label" data-en="Location">الموقع</div>
+          <div class="contact-value" style="direction:rtl;" data-en="Jeddah, Saudi Arabia">جدة، المملكة العربية السعودية</div>
+        </div>
+      </div>
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" style="margin-top:32px;opacity:0.15;">
+        <rect x="5" y="5" width="90" height="90" stroke="#4AACB4" stroke-width="1.2"/>
+        <rect x="18" y="18" width="64" height="64" stroke="#D4A84B" stroke-width="0.8"/>
+        <rect x="32" y="32" width="36" height="36" stroke="#4AACB4" stroke-width="0.6"/>
+        <circle cx="50" cy="50" r="5" fill="#4AACB4"/>
+        <circle cx="5" cy="5" r="2.5" fill="#D4A84B"/>
+        <circle cx="95" cy="5" r="2.5" fill="#D4A84B"/>
+        <circle cx="5" cy="95" r="2.5" fill="#D4A84B"/>
+        <circle cx="95" cy="95" r="2.5" fill="#D4A84B"/>
+      </svg>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <form id="contactForm">
+        <div class="form-success" id="formSuccess" data-en="Thanks for reaching out! We'll respond as soon as possible.">شكراً لتواصلك معنا! سنرد عليك في أقرب وقت ممكن.</div>
+        <div class="form-group">
+          <label class="form-label" data-en="Full Name">الاسم الكامل</label>
+          <input type="text" class="form-input" placeholder="أدخل اسمك الكريم" data-en-placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-en="Email">البريد الإلكتروني</label>
+          <input type="email" class="form-input" placeholder="example@email.com" dir="ltr" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-en="Subject">الموضوع</label>
+          <select class="form-input">
+            <option data-en="General Inquiry">استفسار عام</option>
+            <option data-en="Partnership or Investment">شراكة أو استثمار</option>
+            <option data-en="Job Application">طلب توظيف</option>
+            <option data-en="Media">وسائل إعلام</option>
+            <option data-en="Other">أخرى</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-en="Your Message">رسالتك</label>
+          <textarea class="form-input form-textarea" placeholder="اكتب رسالتك هنا..." data-en-placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit" data-en="Send Message ←">إرسال الرسالة ←</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="#" class="logo-wrap" style="text-decoration:none;margin-bottom:16px;display:flex;">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <path d="M22 4 L38 22 L22 40 L6 22 Z" fill="none" stroke="#4AACB4" stroke-width="1.5"/>
+            <path d="M22 10 L32 22 L22 34 L12 22 Z" fill="none" stroke="#4AACB4" stroke-width="1"/>
+            <path d="M22 16 L28 22 L22 28 L16 22 Z" fill="#4AACB4" opacity="0.4"/>
+            <circle cx="22" cy="4" r="2" fill="#D4A84B"/>
+            <circle cx="38" cy="22" r="2" fill="#D4A84B"/>
+            <circle cx="22" cy="40" r="2" fill="#D4A84B"/>
+            <circle cx="6" cy="22" r="2" fill="#D4A84B"/>
+          </svg>
+          <div style="margin-right:12px;">
+            <div style="font-family:Tajawal,sans-serif;font-size:20px;font-weight:700;color:white;">لاروش</div>
+            <div style="font-family:Outfit,sans-serif;font-size:8px;letter-spacing:3px;color:rgba(255,255,255,0.35);text-transform:uppercase;">LAROCHE</div>
+          </div>
+        </a>
+        <p class="footer-brand-desc" data-en="A Saudi brand specialized in modern youth fashion — combining quality, design, and real value to deliver an exceptional shopping experience.">علامة سعودية متخصصة في الأزياء العصرية الشبابية — تجمع بين الجودة والتصميم والقيمة الحقيقية لتقديم تجربة تسوق استثنائية.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn">IG</a>
+          <a href="#" class="social-btn">X</a>
+          <a href="#" class="social-btn">TK</a>
+          <a href="#" class="social-btn">SC</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-en="Brand">العلامة · Brand</div>
+        <a href="#about" class="footer-link" data-en="About Us">من نحن</a>
+        <a href="#story" class="footer-link" data-en="Our Vision & Mission">رؤيتنا ورسالتنا</a>
+        <a href="#story" class="footer-link" data-en="Brand Story">قصة العلامة</a>
+        <a href="#achievements" class="footer-link" data-en="Achievements">إنجازاتنا</a>
+      </div>
+      <div>
+        <div class="footer-col-title" data-en="Explore">استكشف · Explore</div>
+        <a href="#collections" class="footer-link" data-en="Collections">المجموعات</a>
+        <a href="#branches" class="footer-link" data-en="Branches">الفروع</a>
+      </div>
+      <div>
+        <div class="footer-col-title" data-en="Connect">تواصل · Connect</div>
+        <a href="#contact" class="footer-link" data-en="Contact Us">تواصل معنا</a>
+        <a href="#careers" class="footer-link" data-en="Careers">الوظائف</a>
+        <a href="mailto:info@laroche.sa" class="footer-link" dir="ltr">info@laroche.sa</a>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-copy" data-en="© 2026 LAROCHE. All rights reserved.">© 2026 لاروش · LAROCHE. جميع الحقوق محفوظة.</div>
+      <div class="footer-legal">
+        <a href="#" class="footer-legal-link" data-en="Privacy Policy">سياسة الخصوصية</a>
+        <a href="#" class="footer-legal-link" data-en="Terms & Conditions">الشروط والأحكام</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── NAV SCROLL ── */
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* ── LANGUAGE TOGGLE ── */
+const langToggleBtns = document.querySelectorAll('.lang-toggle');
+let currentLang = 'ar';
+const translatable = document.querySelectorAll('[data-en]');
+const translatableInputs = document.querySelectorAll('[data-en-placeholder]');
+const originals = new Map();
+translatable.forEach(el => originals.set(el, el.innerHTML));
+const originalPlaceholders = new Map();
+translatableInputs.forEach(el => originalPlaceholders.set(el, el.getAttribute('placeholder')));
+
+function setLanguage(lang) {
+  currentLang = lang;
+  if (lang === 'en') {
+    translatable.forEach(el => { el.innerHTML = el.getAttribute('data-en'); });
+    translatableInputs.forEach(el => { el.setAttribute('placeholder', el.getAttribute('data-en-placeholder')); });
+    document.documentElement.setAttribute('lang', 'en');
+    document.documentElement.setAttribute('dir', 'ltr');
+    document.body.classList.add('lang-en');
+  } else {
+    translatable.forEach(el => { el.innerHTML = originals.get(el); });
+    translatableInputs.forEach(el => { el.setAttribute('placeholder', originalPlaceholders.get(el)); });
+    document.documentElement.setAttribute('lang', 'ar');
+    document.documentElement.setAttribute('dir', 'rtl');
+    document.body.classList.remove('lang-en');
+  }
+  langToggleBtns.forEach(btn => { btn.textContent = lang === 'ar' ? 'EN / AR' : 'AR / EN'; });
+}
+
+langToggleBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    setLanguage(currentLang === 'ar' ? 'en' : 'ar');
+  });
+});
+
+/* ── MOBILE MENU TOGGLE ── */
+const navToggleBtn = document.getElementById('navToggleBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+if (navToggleBtn && mobileMenu) {
+  navToggleBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    navToggleBtn.textContent = isOpen ? '✕' : '☰';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      navToggleBtn.textContent = '☰';
+    });
+  });
+}
+
+/* ── SCROLL REVEAL ── */
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+/* ── COUNTER ANIMATION ── */
+function animateCounter(el, target, suffix = '', duration = 2000) {
+  let start = 0;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(ease * target);
+    el.innerHTML = current >= 1000
+      ? (current / 1000).toFixed(0) + 'K' + suffix
+      : current + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const c1 = document.getElementById('cnt1');
+      const c2 = document.getElementById('cnt2');
+      if (c1) animateCounter(c1, 500000, '<span>+</span>');
+      if (c2) animateCounter(c2, 18, '<span>+</span>', 1200);
+      statsObserver.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+
+const strip = document.querySelector('.stats-strip');
+if (strip) statsObserver.observe(strip);
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href.length > 1) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+/* ── CONTACT FORM (client-side only, no backend) ── */
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formSuccess.classList.add('visible');
+    contactForm.reset();
+    setTimeout(() => formSuccess.classList.remove('visible'), 5000);
+  });
+}
+</script>
+</body>
+</html>
